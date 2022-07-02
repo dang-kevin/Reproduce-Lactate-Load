@@ -1,7 +1,5 @@
 # Study Review
 
-Review the chosen study as if you were an academic reviewer.
-
 ## Study information
 
 ### Title
@@ -18,13 +16,6 @@ DOI: https://doi.org/10.1186/s12871-022-01617-5
 
 ### Dataset(s) used
 
-Describe the dataset used in the original study. Include:
-
-* Dataset name and version
-* DOI (or link if no DOI available)
-* Citation
-* Other relevant information (link to dataset documentation, etc)
-
 - MIMIC-IV, version 1.0
 - DOI (or link if no DOI available): https://doi.org/10.13026/s6n6-xd98
 - Citation: Johnson, A., Bulgarelli, L., Pollard, T., Horng, S., Celi, L. A., & Mark, R. (2021). MIMIC-IV (version 1.0). PhysioNet. https://doi.org/10.13026/s6n6-xd98.
@@ -32,15 +23,28 @@ Describe the dataset used in the original study. Include:
 
 ## Summarize the paper
 
-Summarize the paper's goals and results in your own words.
+The paper aims to investigate the relation between lactate load and 28-day mortality in sepsis and non-sepsis patients. It also seeks to compare the accuracy in mortality prediction between these two groups of patients. What they found was that normalized lactate load is the strongest predictor of mortality rate (compared to maximum lactate and mean lactate load) in both sepsis and non-sepsis patients. Additionally, the accuracy of this predictor is better in sepsis patients compared to non-sepsis patients. 
 
 ### Strength(s) of the work
 
-Highlight 3 strengths of the work.
+- Thoroughness 
+    - Variables properly listed, definition of lactate load clearly explained, study design and methods are well laid out.
+    - Limitations of study are acknowledged
+- Clear Figures 
+    - The lactate load definition, cohort flow diagram, and boxplots were very easy to understand.  
+- Sensitivity analysis
+    - The authors test whether taking more lactate measurements can improve the accuracy of normalized lactate load in predicting mortality. This is good practice as they are checking whether their results are robust to changes in the study design.
 
 ### Weakness(es) of the work
 
 Highlight 3 weaknesses of the work.
+
+- Grammatical errors
+    - Introduction, Paragraph 2: "We **hypothesis** that the performance of normalized lactate load in predicting mortality is different between the sepsis and the non-sepsis patients."
+- Scientific jargon
+    - In the introduction, a lot of scientific terms were introduced and as a reader without a scientific background I found it difficult to understand the definition of lactate. 
+- Statistical software 
+    - The authors used STATA for their analysis, which is quite expensive to purchase as it is not open source. 
 
 ### Anticipated reproducibility challenges
 
@@ -89,3 +93,5 @@ e.g. p-value, effect sizes, statistical tests, performance measures like area un
 ### Sensitivity Analyses
 
 Describe any additional sensitivity analyses performed in the study.
+
+The authors test whether taking more lactate measurements can improve the accuracy of normalized lactate load in predicting mortality. This is the case for non-sepsis patients, but not for sepsis patients.
