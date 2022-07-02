@@ -12,7 +12,9 @@ DOI: https://doi.org/10.1186/s12871-022-01617-5
 
 ### Objective(s) of the study
 
-Describe the primary and secondary objectives of the research study.
+- Evaluate the association between normalized lactate load, an index that incorporates the magnitude of change and the time interval of such evolution of lactate, and 28-day mortality in sepsis and non-sepsis patients. 
+
+- Compare the accuracy of normalized lactate load in predicting mortality between these two populations.
 
 ### Dataset(s) used
 
@@ -22,6 +24,11 @@ Describe the dataset used in the original study. Include:
 * DOI (or link if no DOI available)
 * Citation
 * Other relevant information (link to dataset documentation, etc)
+
+- MIMIC-IV, version 1.0
+- DOI (or link if no DOI available): https://doi.org/10.13026/s6n6-xd98
+- Citation: Johnson, A., Bulgarelli, L., Pollard, T., Horng, S., Celi, L. A., & Mark, R. (2021). MIMIC-IV (version 1.0). PhysioNet. https://doi.org/10.13026/s6n6-xd98.
+- Other relevant information (link to dataset documentation, etc): https://mimic.mit.edu/docs/iv/
 
 ## Summarize the paper
 
