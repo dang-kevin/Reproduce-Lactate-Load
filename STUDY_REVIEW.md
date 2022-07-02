@@ -6,7 +6,9 @@ Review the chosen study as if you were an academic reviewer.
 
 ### Title
 
-The title of the study with its digital object identifier (DOI).
+Increased normalized lactate load is associated with higher mortality in both sepsis and non-sepsis patients: an analysis of the MIMIC-IV database
+
+DOI: https://doi.org/10.1186/s12871-022-01617-5
 
 ### Objective(s) of the study
 
