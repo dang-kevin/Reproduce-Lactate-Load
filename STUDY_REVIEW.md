@@ -48,29 +48,31 @@ Highlight 3 weaknesses of the work.
 
 ### Anticipated reproducibility challenges
 
-Describe areas of the paper which appear to lack sufficient detail.
+In the data extraction section, there is a list of variables that were used. However, there is no mention of which tables they were extracted from, which requires us to do a deeper search. Additionally, the computational calculation of lactate load may not be as straightforward as Figure 1 suggests, as there are no step-by-step instructions.
 
 ## Data extraction
 
 ### Variables
 
-List out the covariates and exposures extracted for the study, e.g. admission source.
+- Covariates: age, gender, weight, comorbidities, the survival time, length of hospital stay, and length of ICU stay, sequential organ failure assessment (SOFA) score, simplified acute physiology score-II (SAPS-II), vital signs, first-day laboratory results, daily fluid input, fluid balance, urine output. 
+
+- Additional: time and value of lactate measurement in the first 24 h of ICU admission to calculate the lactate-related parameters
 
 ### Outcome(s)
 
-List the outcome(s) used in the study, e.g. 28-day mortality.
+28-day mortality.
 
 ### Inclusion/Exclusion criteria
 
-Describe the inclusion criteria for the study. Since inclusion/exclusion criteria are interchangeable, decide on the most clear presentation of the study methodology, e.g. "the study included all adults, and excluded patients admitted to CSRU."
+The exclusion criteria were: 1) age < 18 years; 2) not first ICU admission; 3) only one lactate measurement was obtained during the first 24 h; 4) length of ICU stay < 24 h. Patients were divided into the sepsis or non-sepsis group according to the sepsis-3.0 criteria. 
 
 ### Outlier handling
 
-If outliers were specially processed, describe the approach here.
+There is no mention of outliers in this study.
 
 ### Missing data handling
 
-For any missing data present in the study, explain the approach to handle it.
+There is no mention of missing data in the study.
 
 ## Results
 
@@ -84,14 +86,12 @@ Explain the analysis method of the study in detail.
 
 ### Power calculations (if present)
 
-If a power calculation is present, describe the approach and the assumptions made.
+There is no power calculation present.
 
 ### Evaluation measures
 
-e.g. p-value, effect sizes, statistical tests, performance measures like area under the receiver operator characteristic curve, etc.
+The study used p-value and area under the receiver operator characteristic curve as the two main evaluation measures.
 
 ### Sensitivity Analyses
 
-Describe any additional sensitivity analyses performed in the study.
-
-The authors test whether taking more lactate measurements can improve the accuracy of normalized lactate load in predicting mortality. This is the case for non-sepsis patients, but not for sepsis patients.
+The authors test whether taking more lactate measurements can improve the accuracy of normalized lactate load in predicting mortality. The sensitivity analysis found that this is true for non-sepsis patients, but not for sepsis patients.
