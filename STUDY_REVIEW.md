@@ -29,7 +29,7 @@ The paper aims to investigate the relation between lactate load and 28-day morta
 
 - Thoroughness 
     - Variables properly listed, definition of lactate load clearly explained, study design and methods are well laid out.
-    - Limitations of study are acknowledged
+    - Limitations of study are acknowledged.
 - Clear Figures 
     - The lactate load definition, cohort flow diagram, and boxplots were very easy to understand.  
 - Sensitivity analysis
@@ -44,7 +44,7 @@ Highlight 3 weaknesses of the work.
 - Scientific jargon
     - In the introduction, a lot of scientific terms were introduced and as a reader without a scientific background I found it difficult to understand the definition of lactate. 
 - Statistical software 
-    - The authors used STATA for their analysis, which is quite expensive to purchase as it is not open source. 
+    - The authors used STATA for their analysis, which incurs additional costs as it is not open source. 
 
 ### Anticipated reproducibility challenges
 
@@ -56,7 +56,7 @@ In the data extraction section, there is a list of variables that were used. How
 
 - Covariates: age, gender, weight, comorbidities, the survival time, length of hospital stay, and length of ICU stay, sequential organ failure assessment (SOFA) score, simplified acute physiology score-II (SAPS-II), vital signs, first-day laboratory results, daily fluid input, fluid balance, urine output. 
 
-- Additional: time and value of lactate measurement in the first 24 h of ICU admission to calculate the lactate-related parameters
+- Additional: time and value of lactate measurement in the first 24 h of ICU admission to calculate the lactate-related parameters.
 
 ### Outcome(s)
 
@@ -78,15 +78,35 @@ There is no mention of missing data in the study.
 
 ### Population summary
 
-Provide information about the original study's population: sample size, average mortality, etc. Typically the data is presented in the first table (i.e. Table 1). Select a parsimonious set of descriptors which you will compare your reproduction against. At the very least include the sample size and a summary measure of the outcome(s).
+Variable \ Sample size: | Whole population (n = 21,333) | Non-sepsis (n = 17,114) |	Sepsis (n = 4219) 
+ --- | --- | --- | --- 
+Die in 28 days | 3569 (16.7) | 2019 (11.8) | 1550 (36.7) 
+Age (year) | 65.1 ± 16 | 64.5 ± 16.1 | 67.4 ± 15.4
+Female (%) | 8528 (40) | 6650 (38.9) | 1878 (44.5) 
+Weight (kg) | 83 ± 23.8 | 83.1 ± 23.2 | 82.7 ± 26.2 
+SOFA score | 5.9 ± 3.7 | 5.3 ± 3.3 | 8.6 ± 3.9
+Mean heart rate (bpm) |	87.6 ± 16 |	86 ± 15.2 |	93.7 ± 17.7
+Normalized lactate load (mmol/L) | 1.9 (1.4, 2.7) |	1.9 (1.4, 2.6) | 2.2 (1.5, 3.6) 
+
+Data are presented as mean ± standard deviation or median (interquartile range) for continuous variables and counts (percentages) for categorical variables.
 
 ### Analysis method
 
 Explain the analysis method of the study in detail.
 
+The main methods used in this study are: 
+- Receiver-operating characteristic (ROC) curves to test the performance of maximum lactate, mean lactate, and normalized lactate load in predicting 28-day mortality of sepsis and non-sepsis patients.
+- Delong test to compare the AUCs of the ROC curves 
+    - Provides a p-value, which is easier to interpret than comparing raw values of AUCs.
+
+Other methods:
+- Kolmogorov–Smirnov test to assess the normality of distribution.
+- Student’s t-test (for normal distribution) or Wilcoxon rank-sum test (for non-normal distribution) were used to compare the continuous characteristics between sepsis and non-sepsis patients
+- For categorical variables, the chi-square test was performed.
+
 ### Power calculations (if present)
 
-There is no power calculation present.
+There are no power calculations present.
 
 ### Evaluation measures
 
