@@ -6,24 +6,45 @@ This template is based on material from the OSF, as well as from Brandt et al., 
 
 ## Title of the study
 
-The title of the reproduced study with its digital object identifier (DOI).
+Increased normalized lactate load is associated with higher mortality in both sepsis and non-sepsis patients: an analysis of the MIMIC-IV database
+
+DOI: https://doi.org/10.1186/s12871-022-01617-5
 
 ## Dataset(s) used
 
-Describe the dataset used in the reproduction. Include the same information as above, that is at least:
-
-* Dataset name and version
-* DOI (or link if no DOI available)
-* Citation
-* Other relevant information (link to dataset documentation, etc)
-
-If the same dataset in the original study is used for the reproduction, reference the prior section.
+- MIMIC-IV, version 1.0
+- DOI (or link if no DOI available): https://doi.org/10.13026/s6n6-xd98
+- Citation: Johnson, A., Bulgarelli, L., Pollard, T., Horng, S., Celi, L. A., & Mark, R. (2021). MIMIC-IV (version 1.0). PhysioNet. https://doi.org/10.13026/s6n6-xd98.
+- Other relevant information (link to dataset documentation, etc): https://mimic.mit.edu/docs/iv/
 
 ## Data extraction
 
 ### Inclusion/Exclusion criteria
 
-Provide the column names for your proposed "cohort" table, which will apply all inclusion/exclusion criteria. Include the description of the criteria, the table in the dataset you will use, and how missing data will be interpreted (e.g. missing values will be assumed to include the patient).
+The exclusion criteria were: 1) age < 18 years; 2) not first ICU admission; 3) only one lactate measurement was obtained during the first 24 h; 4) length of ICU stay < 24 h. Patients were divided into the sepsis or non-sepsis group according to the sepsis-3.0 criteria. 
+
+Column names for proposed cohort table:
+1. exclude_non_adult
+    - exclude patients under 18 years of age
+    - mimic_derived.age 
+    - missing values will be assumed to include the patient
+2. exclude_readmission
+    - exclude if not first ICU admission
+    - mimic_core.admissions
+    - missing values will be assumed to include the patient
+3. exclude_one_lactate_measurement
+    - exclude if only one lactate measurement was obtained during the first 24 hours
+    - mimic_hosp.labevents
+    - missing values will be assumed to include the patient
+4. exclude_short_icu_stay
+    - exclude if length of ICU stay less than 24 hours
+    - mimic_icu.icustays
+    - missing values will be assumed to include the patient
+5. sepsis_flag
+    - create a variable to separate the patients into sepsis or non-sepsis group according to sepsis-3.0 criteria
+    - mimic_derived.sepsis3
+    - missing values will be assumed to include the patient
+
 
 ### Variables
 
