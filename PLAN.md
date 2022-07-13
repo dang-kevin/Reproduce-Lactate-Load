@@ -24,32 +24,32 @@ DOI: https://doi.org/10.1186/s12871-022-01617-5
 The exclusion criteria were: 1) age < 18 years; 2) not first ICU admission; 3) only one lactate measurement was obtained during the first 24 h; 4) length of ICU stay < 24 h. Patients were divided into the sepsis or non-sepsis group according to the sepsis-3.0 criteria. 
 
 Column names for proposed cohort table:
-1. exclude_non_adult
+1. `exclusion_non_adult`
     - exclude patients under 18 years of age
-    - mimic_derived.age 
+    - mimic_derived.`age`
     - missing values will be assumed to include the patient
-2. exclude_readmission
+2. `exclusion_readmission`
     - exclude if not first ICU admission
-    - mimic_core.admissions
+    - mimic_core.`admissions`
     - missing values will be assumed to include the patient
-3. exclude_one_lactate_measurement
+3. `exclusion_one_lactate_measurement`
     - exclude if only one lactate measurement was obtained during the first 24 hours
-    - mimic_hosp.labevents
+    - mimic_hosp.`labevents`
     - missing values will be assumed to include the patient
-4. exclude_short_icu_stay
+4. `exclusion_short_icu_stay`
     - exclude if length of ICU stay less than 24 hours
-    - mimic_icu.icustays
+    - mimic_icu.`icustays`
     - missing values will be assumed to include the patient
-5. sepsis_flag
+5. `sepsis_flag`
     - create a variable to separate the patients into sepsis or non-sepsis group according to sepsis-3.0 criteria
-    - mimic_derived.sepsis3
+    - mimic_derived.`sepsis3`
     - missing values will be assumed to include the patient
 
 
 ### Variables
 
 List out the planned source for all covariates and exposures extracted for the study, e.g. admission source.
-If describing a time-varying covariate, be specific regarding the aggregation and the time window (e.g. "lowest mean arterial pressure during the first 24 hours of the ICU stay."). The following template is a useful guide.
+If describing a time-varying covariate, be specific regarding the aggregation and the time window (e.g. "lowest mean arterial pressure during the first 24 hours of the ICU stay.").
 
 age, gender, weight, comorbidities, the survival
 time, length of hospital stay, and length of ICU stay,
@@ -62,26 +62,26 @@ extracted to calculate the lactate-related parameters.
 
 Variable name | Description | Timing | Aggregation | Source | Notes
 --- | --- | --- | --- | --- | ---
-Age | Patient age in years | Admission | Initial | `age` | 
-Gender | Patient gender | Admission | Initial | `patients` | 
-Weight | Patient weight in kg | Admission | Initial | `weight_durations` or `first_day_weight`
-SOFA score | Sequential organ failure assessment score | Any time during the ICU stay | Initial |  `chartevents` or `sofa` or `first_day_sofa`
-SAPS-II score | Simplified acute physiology score-II | Any time during the ICU stay | Initial | `sapsii`
-Length of hospital stay | Hospital stay length in days | Days from admission to discharge | Final | `admissions`
-Length of ICU stay | ICU stay length in days | Days from ICU admission to discharge | Final | `icustays`
-24-h fluid intake | Daily fluid intake in mL | First 24 hours | Initial
-24-h urine output | Daily urine output in mL | First 24 hours | Initial | `first_day_urine_output` or `urine_output_rate`
-Congestive heart failure 
-Myocardial infarction
-Cerebrovascular disease
-Chronic pulmonary disease
-Mild liver disease
-Severe liver disease
-Diabetes without complication
-Diabetes with complication
-Renal disease
-Malignant cancer
-AIDS
+`age` | Patient age in years | Admission | Initial | `age` | 
+`gender` | Patient gender | Admission | N/A | `patients` | 
+`weight` | Patient weight in kg | Admission | Initial | `weight_durations` or `first_day_weight`
+`sofa_score` | Sequential organ failure assessment score | Any time during the ICU stay | Initial |  `chartevents` or `sofa` or `first_day_sofa`
+`sapsii_score` | Simplified acute physiology score-II | Any time during the ICU stay | Initial | `sapsii`
+`length_of_hospital_stay` | Length of hospital stay in days | Days from admission to discharge | N/A | `admissions`
+`length_of_icu_stay` | Length of ICU stay in days | Days from ICU admission to discharge | N/A | `icustays`
+`daily_fluid_intake` | 24-hour fluid intake in mL | First 24 hours | Initial | unknown |  
+`daily_urine_output` | 24-hour urine output in mL | First 24 hours | Initial | `first_day_urine_output` or `urine_output_rate`
+`congestive_heart_failure` | Whether a patient is diagnosed with congestive heart failure | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd` 
+`myocardial_infarction` | Whether a patient is diagnosed with myocardial infarction | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd`
+`cerebrovascular_disease` | Whether a patient is diagnosed with cerebrovascular disease | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd`
+`chronic_pulmonary_disease` | Whether a patient is diagnosed with chronic pulmonary disease | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd`
+`mild_liver_disease` | Whether a patient is diagnosed with mild liver disease | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd` | Need to manually classify mild vs severe
+`severe_liver_disease` | Whether a patient is diagnosed with severe liver disease | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd` | Need to manually classify mild vs severe
+`diabetes_without_complication` | Whether a patient is diagnosed with diabetes without complication | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd` | Need to be extremely specific with string matching
+`diabetes_with_complication` | Whether a patient is diagnosed with diabetes with complication | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd` | Need to be extremely specific with string matching
+`renal_disease` | Whether a patient is diagnosed with renal disease | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd`
+`malignant_cancer` | Whether a patient is diagnosed with a malignant form of cancer | Any time during hospital stay | N/A | unknown
+`aids` | Whether a patient is diagnosed with AIDS | Any time during hospital stay | N/A | unknown
 Maximum anion gap (mmol/L) 	
 Minimum albumin (g/dL) 	
 Maximum bilirubin (mg/L) 	
@@ -115,4 +115,4 @@ Also include in the notes whether outliers were processed (and how), as well as 
 
 Variable name | Description | Timing | Aggregation | Source | Notes
 --- | --- | --- | --- | --- | ---
-28-day mortality | Whether or not the patient dies after 28 days | 28 days after admission | Final | `admissions` | create new variable based on `admittime` and `deathtime`: set to 1 if `deathtime` exists and `deathtime` - `admittime` <= 28 days, else 0.
+28-day mortality | Whether or not the patient dies after 28 days | 28 days after admission | N/A | `admissions` | create new variable based on `admittime` and `deathtime`: set to 1 if `deathtime` exists and `deathtime` - `admittime` <= 28 days, else 0.
