@@ -77,8 +77,8 @@ Variable name | Description | Timing | Aggregation | Source | Notes
 `chronic_pulmonary_disease` | Whether patient is diagnosed with chronic pulmonary disease | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd`
 `mild_liver_disease` | Whether patient is diagnosed with mild liver disease | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd` | Need to manually classify mild vs severe
 `severe_liver_disease` | Whether patient is diagnosed with severe liver disease | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd` | Need to manually classify mild vs severe
-`diabetes_without_complication` | Whether patient is diagnosed with diabetes without complication | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd` | Need to be extremely specific with string matching
-`diabetes_with_complication` | Whether patient is diagnosed with diabetes with complication | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd` | Need to be extremely specific with string matching
+`diabetes_without_complication` | Whether patient is diagnosed with diabetes without complication | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd`
+`diabetes_with_complication` | Whether patient is diagnosed with diabetes with complication | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd` 
 `renal_disease` | Whether patient is diagnosed with renal disease | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd`
 `malignant_cancer` | Whether patient is diagnosed with a malignant form of cancer | Any time during hospital stay | N/A | unknown
 `aids` | Whether patient is diagnosed with Acquired immunodeficiency syndrome | Any time during hospital stay | N/A | unknown
