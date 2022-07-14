@@ -48,18 +48,6 @@ Column names for proposed cohort table:
 
 ### Variables
 
-List out the planned source for all covariates and exposures extracted for the study, e.g. admission source.
-If describing a time-varying covariate, be specific regarding the aggregation and the time window (e.g. "lowest mean arterial pressure during the first 24 hours of the ICU stay.").
-
-age, gender, weight, comorbidities, the survival
-time, length of hospital stay, and length of ICU stay,
-sequential organ failure assessment (SOFA) score, simplified
-acute physiology score-II (SAPS-II), vital signs, firstday
-laboratory results, daily fluid input, fluid balance,
-and urine output. Besides, the time and value of lactate
-measurement in the first 24 h of ICU admission were also
-extracted to calculate the lactate-related parameters.
-
 Variable name | Description | Timing | Aggregation | Source | Notes
 --- | --- | --- | --- | --- | ---
 `age` | Patient age in years | Admission | Initial | `age` | 
@@ -107,9 +95,6 @@ Variable name | Description | Timing | Aggregation | Source | Notes
 `mean_lactate` | Mean lactate (mmol/L) | Any time during ICU stay | Average | `d_labitems` and `labevents`
 `lactate_load` | Lactate load (mmol·hr./L) | Any time during ICU stay | N/A | `d_labitems` and `labevents` | AUC of lactate
 `normalized_lactate_load` | Normalized lactate load (mmol/L) | Any time during ICU stay | Normalized | `d_labitems` and `labevents` | Lactate load over time
-
-If unsure about the source, write all possibilities, and justify them in the notes.
-Also include in the notes whether outliers were processed (and how), as well as the approach for missing data.
 
 ### Outcome(s)
 
