@@ -68,7 +68,7 @@ The exclusion criteria were: 1) age < 18 years; 2) not first ICU admission; 
 
 ### Outlier handling
 
-There is no mention of outliers in this study.
+There is no direct mention of outliers in the text of this paper. However, in the flowchart (Figure 2) there is a box which says that 2 extreme outliers were excluded. 
 
 ### Missing data handling
 
