@@ -4,7 +4,9 @@ The following is a logbook/ultimate conclusion for a reproduction of a published
 
 ## Title
 
-The title of the reproduced study with its digital object identifier (DOI).
+Increased normalized lactate load is associated with higher mortality in both sepsis and non-sepsis patients: an analysis of the MIMIC-IV database
+
+DOI: https://doi.org/10.1186/s12871-022-01617-5
 
 ## Known differences
 
