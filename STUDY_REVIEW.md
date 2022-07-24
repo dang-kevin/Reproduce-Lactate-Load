@@ -37,14 +37,16 @@ The paper aims to investigate the relation between lactate load and 28-day morta
 
 ### Weakness(es) of the work
 
-Highlight 3 weaknesses of the work.
-
 - Grammatical errors
     - Introduction, Paragraph 2: "We **hypothesis** that the performance of normalized lactate load in predicting mortality is different between the sepsis and the non-sepsis patients."
 - Scientific jargon
     - In the introduction, a lot of scientific terms were introduced and as a reader without a scientific background I found it difficult to understand the definition of lactate. 
 - Statistical software 
     - The authors used STATA for their analysis, which incurs additional costs as it is not open source. 
+- Bias
+    - Only includes patients staying less than 24 hours in the ICU, so it's biased towards a healthier cohort.
+- Confounding 
+    - Not adjusting for confounders. Hard to say how much additional information lactate load is providing.
 
 ### Anticipated reproducibility challenges
 
