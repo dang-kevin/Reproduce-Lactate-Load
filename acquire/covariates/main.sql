@@ -7,7 +7,7 @@ SELECT age.subject_id
 , sof.SOFA AS sofa_score
 , sap.sapsii AS sapsii_score
 , DATE_DIFF(adm.dischtime, adm.admittime, DAY) AS length_of_hospital_stay
-, DATE_DIFF(outtime, intime, HOUR) AS length_of_icu_stay
+, DATE_DIFF(outtime, intime, DAY) AS length_of_icu_stay
 , uri.urineoutput AS daily_urine_output
 FROM `physionet-data.mimic_derived.age` AS age
 INNER JOIN `physionet-data.mimic_core.patients` AS pat
