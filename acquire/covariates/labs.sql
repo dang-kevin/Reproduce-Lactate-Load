@@ -72,7 +72,7 @@ WITH anion AS (
 )
 
 , labs AS (
-  SELECT DISTINCT lab.subject_id, lab.hadm_id
+  SELECT icu.subject_id, icu.hadm_id, icu.stay_id
   , CASE WHEN itemid IN (SELECT itemid FROM anion) THEN valuenum ELSE NULL END AS anion_gap
   , CASE WHEN itemid IN (SELECT itemid FROM albumin) THEN valuenum ELSE NULL END AS albumin
   , CASE WHEN itemid IN (SELECT itemid FROM bilirubin) THEN valuenum ELSE NULL END AS bilirubin
@@ -92,7 +92,7 @@ WITH anion AS (
     AND DATE_DIFF(lab.charttime, icu.intime, HOUR) < 24
 )
 
-SELECT subject_id, hadm_id 
+SELECT subject_id, hadm_id, stay_id
 , MAX(anion_gap) AS max_anion_gap
 , MIN(albumin) AS min_albumin
 , MAX(bilirubin) AS max_bilirubin
@@ -107,5 +107,5 @@ SELECT subject_id, hadm_id
 , MAX(bur) AS max_blood_urea_nitrogen
 , MAX(wbc) AS max_wbc_count
 FROM labs
-GROUP BY subject_id, hadm_id
-ORDER BY subject_id, hadm_id
+GROUP BY subject_id, hadm_id, stay_id
+ORDER BY subject_id, hadm_id, stay_id

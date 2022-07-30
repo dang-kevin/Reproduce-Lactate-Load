@@ -51,7 +51,7 @@ WITH con_hf AS (
 )
 
 
-SELECT DISTINCT subject_id, hadm_id
+SELECT subject_id, hadm_id
 , MAX(CASE WHEN icd_code IN (SELECT icd_code FROM con_hf) THEN 1 ELSE 0 END) AS congestive_heart_failure
 , MAX(CASE WHEN icd_code IN (SELECT icd_code FROM myo_inf) THEN 1 ELSE 0 END) AS myocardial_infarction
 , MAX(CASE WHEN icd_code IN (SELECT icd_code FROM cerebro) THEN 1 ELSE 0 END) AS cerebrovascular_disease 
