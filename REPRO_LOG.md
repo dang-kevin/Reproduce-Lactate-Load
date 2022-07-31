@@ -12,6 +12,9 @@ DOI: https://doi.org/10.1186/s12871-022-01617-5
 
 Specify changes to the data processing and/or methodology which are known to you. For each difference, describe: (1) the original study approach, (2) the reproduction approach, (3) the justification for the change. If possible, classify the differences as major (could impact the result of the study) or minor (unlikely to change the result of the study).
 
+* (minor) Combined mild and severe liver disease into one variable. Unable to distinguish between mild/severe in data extraction with SQL as those terms do not exist in the diagnoses table. 
+* (minor) 24-hour fluid intake, malignant cancer, AIDS,  APTT, INR are not included in the reproduction as I was unable to find these variables in the MIMIC-IV database.
+
 ## Unknown differences
 
 Specify changes to the data processing and/or methodology which *may* have occurred, but you are unable to confirm due to ambiguity in the original material studied. For each difference, describe (1) the most specific reference to the approach in the original study, if possible, and (2) the approach taken in the reproduction.
