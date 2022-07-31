@@ -23,10 +23,17 @@ WITH con_hf AS (
   WHERE LOWER(long_title) LIKE '%chronic pulmonary%'
 )
 
-, liver AS (
+, mild_liver AS (
   SELECT icd_code 
   FROM `physionet-data.mimic_hosp.d_icd_diagnoses` 
   WHERE LOWER(long_title) LIKE '%liver disease%'
+    AND LOWER(long_title) NOT LIKE '%toxic%'
+)
+
+, severe_liver AS (
+  SELECT icd_code 
+  FROM `physionet-data.mimic_hosp.d_icd_diagnoses` 
+  WHERE LOWER(long_title) LIKE '%toxic liver disease%'
 )
 
 , diab_wo_comp AS (
@@ -56,7 +63,8 @@ SELECT subject_id, hadm_id
 , MAX(CASE WHEN icd_code IN (SELECT icd_code FROM myo_inf) THEN 1 ELSE 0 END) AS myocardial_infarction
 , MAX(CASE WHEN icd_code IN (SELECT icd_code FROM cerebro) THEN 1 ELSE 0 END) AS cerebrovascular_disease 
 , MAX(CASE WHEN icd_code IN (SELECT icd_code FROM chron_pulm) THEN 1 ELSE 0 END) AS chronic_pulmonary_disease
-, MAX(CASE WHEN icd_code IN (SELECT icd_code FROM liver) THEN 1 ELSE 0 END) AS liver_disease  
+, MAX(CASE WHEN icd_code IN (SELECT icd_code FROM mild_liver) THEN 1 ELSE 0 END) AS mild_liver_disease 
+, MAX(CASE WHEN icd_code IN (SELECT icd_code FROM severe_liver) THEN 1 ELSE 0 END) AS severe_liver_disease 
 , MAX(CASE WHEN icd_code IN (SELECT icd_code FROM diab_wo_comp) THEN 1 ELSE 0 END) AS diabetes_without_complication
 , MAX(CASE WHEN icd_code IN (SELECT icd_code FROM diab_w_comp) THEN 1 ELSE 0 END) AS diabetes_with_complication
 , MAX(CASE WHEN icd_code IN (SELECT icd_code FROM renal) THEN 1 ELSE 0 END) AS renal_disease  
