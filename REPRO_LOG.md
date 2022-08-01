@@ -28,7 +28,6 @@ A table comparing the population measures between the original and the reproduct
 
 Population measure | Original Study | Reproduction
 --- | --- | ---
-n | 21333 | 17426
 Age (year) | 65.1 ± 16 | 64.0 ± 15.9
 Female (%) | 8528 (40) | 6865 (39.4)
 Weight (kg) | 83 ± 23.8 | 83.7 ± 23.7
