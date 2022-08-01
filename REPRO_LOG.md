@@ -1,7 +1,5 @@
 # Conclusion for reproduction
 
-The following is a logbook/ultimate conclusion for a reproduction of a published scientific study. Feel free to add/remove sections as you find them useful.
-
 ## Title
 
 Increased normalized lactate load is associated with higher mortality in both sepsis and non-sepsis patients: an analysis of the MIMIC-IV database
@@ -19,6 +17,8 @@ Specify changes to the data processing and/or methodology which are known to you
 Specify changes to the data processing and/or methodology which *may* have occurred, but you are unable to confirm due to ambiguity in the original material studied. For each difference, describe (1) the most specific reference to the approach in the original study, if possible, and (2) the approach taken in the reproduction.
 
 * (major) Exclusion criteria is ambiguous given the scope of the MIMIC-IV database so it is up to the reader to interpret - leading to a different cohort size.
+* (minor) No mention of how to deal with outliers and missing values   
+* (minor) Unclear if 28-day mortality uses date of hospital admission or ICU admission as the baseline.
 
 ## Comparison of population
 
@@ -50,8 +50,9 @@ A table of the evaluation measures comparing the results in the original study a
 
 Evaluation measure | Original Study | Reproduction
 --- | --- | ---
-TBD | | 
+cohort | 21333 | 17426
+% excluded | 59.8% | 56.0%
 
 ## Conclusion(s) regarding reproducibility
 
-Highlight specific challenges faced during the reproduction attempt which could be improved upon in the future.
+Overall, a very difficult paper to reproduce. There is a high level of ambiguity with exclusion criteria, the outcome variable, missing values, and outliers. With the scope of the MIMIC-IV database, and 46 variables in this study to extract there is a lot of room for error without more specific instructions.
