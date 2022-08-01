@@ -13,7 +13,7 @@ FROM `physionet-data.mimic_icu.icustays` AS icu
 INNER JOIN `physionet-data.mimic_core.patients` AS pat
   ON icu.subject_id = pat.subject_id
 INNER JOIN `physionet-data.mimic_derived.first_day_weight` AS wt
-  ON icu.subject_id = wt.subject_id
+  ON icu.stay_id = wt.stay_id
 INNER JOIN `physionet-data.mimic_derived.first_day_sofa` AS sof
   ON icu.stay_id = sof.stay_id
 INNER JOIN `physionet-data.mimic_derived.sapsii` AS sap
