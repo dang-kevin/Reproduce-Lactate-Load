@@ -11,6 +11,7 @@ WITH lactate_count AS (
   )  
     AND DATE_DIFF(lab.charttime, icu.intime, HOUR) > 0
     AND DATE_DIFF(lab.charttime, icu.intime, HOUR) < 24
+    AND lab.valuenum IS NOT NULL
   GROUP BY icu.stay_id
 )
 
