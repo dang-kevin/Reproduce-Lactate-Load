@@ -18,13 +18,31 @@ Specify changes to the data processing and/or methodology which are known to you
 
 Specify changes to the data processing and/or methodology which *may* have occurred, but you are unable to confirm due to ambiguity in the original material studied. For each difference, describe (1) the most specific reference to the approach in the original study, if possible, and (2) the approach taken in the reproduction.
 
+* (major) Exclusion criteria is ambiguous given the scope of the MIMIC-IV database so it is up to the reader to interpret - leading to a different cohort size.
+
 ## Comparison of population
 
 A table comparing the population measures between the original and the reproduction.
 
 Population measure | Original Study | Reproduction
 --- | --- | ---
-TBD | | 
+n | 21333 | 17426
+Age (year) | 65.1 ± 16 | 64.0 ± 15.9
+Female (%) | 8528 (40) | 6865 (39.4)
+Weight (kg) | 83 ± 23.8 | 83.7 ± 23.7
+SOFA score | 5.9 ± 3.7 | 7.2 ± 4.0
+Length of hospital stay (day) | 8 (5.1, 13.5) | 9.0 (5.0,15.0) 
+Length of ICU stay (day) | 	2.7 (1.4, 5.2) | 3.0 (2.0, 6.0)
+Die in 28 days | 3569 (16.7) | 2484 (14.3)
+Congestive heart failure | 6849 (32.1) | 4736 (27.2) 
+Maximum anion gap (mmol/L) | 16.7 ± 5.7 | 15.9 ± 5.2
+Mean heart rate (bpm) | 87.6 ± 16 | 87.3 ± 15.9
+Maximum lactate (mmol/L) | 2.6 (1.8, 3.9) | 2.6 (1.8, 3.8)
+Mean lactate (mmol/L) | 2.1 (1.5, 2.9) | (2.0 (1.5, 2.9)
+Lactate load (mmol·hr./L) | 46.2 (33.8, 65.1) | 46.0 (34.0,64.2)
+Normalized lactate load (mmol/L) | 1.9 (1.4, 2.7) | 1.9 (1.4, 2.7)
+
+Data are presented as mean ± standard deviation or median (interquartile range) for continuous variables and counts (percentages) for categorical variables.
 
 ## Comparison of results
 
