@@ -1,5 +1,5 @@
 WITH lactate AS (
-SELECT icu.subject_id, icu.hadm_id, icu.stay_id, valuenum
+SELECT icu.subject_id, icu.hadm_id, icu.stay_id, lab.valuenum
 FROM `physionet-data.mimic_hosp.labevents` AS lab
 INNER JOIN `physionet-data.mimic_icu.icustays` AS icu
       ON lab.hadm_id = icu.hadm_id
@@ -10,6 +10,7 @@ WHERE itemid IN (
 ) 
   AND DATE_DIFF(lab.charttime, icu.intime, HOUR) > 0
   AND DATE_DIFF(lab.charttime, icu.intime, HOUR) < 24
+  AND lab.valuenum IS NOT NULL
 )
 
 SELECT subject_id, hadm_id, stay_id
