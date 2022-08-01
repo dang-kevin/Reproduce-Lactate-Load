@@ -12,4 +12,5 @@ WHERE itemid IN (
   )  
 AND DATE_DIFF(lab.charttime, icu.intime, HOUR) > 0 
 AND DATE_DIFF(lab.charttime, icu.intime, HOUR) < 24
+AND lab.valuenum IS NOT NULL
 ORDER BY icu.subject_id, icu.stay_id, icu.hadm_id
