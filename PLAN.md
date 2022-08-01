@@ -40,7 +40,7 @@ Column names for proposed cohort table:
     - exclude if length of ICU stay less than 24 hours
     - mimic_icu.`icustays`
     - missing values will be assumed to include the patient
-5. `sepsis_flag`
+5. `sepsis`
     - create a variable to separate the patients into sepsis or non-sepsis group according to sepsis-3.0 criteria
     - mimic_derived.`sepsis3`
     - missing values will be assumed to include the patient
@@ -52,13 +52,13 @@ Variable name | Description | Timing | Aggregation | Source | Notes
 --- | --- | --- | --- | --- | ---
 `age` | Patient age in years | Admission | Initial | `age` | 
 `gender` | Patient gender | Admission | N/A | `patients` | 
-`weight` | Patient weight in kg | Admission | Initial | `weight_durations` or `first_day_weight`
-`sofa_score` | Sequential organ failure assessment score | Any time during the ICU stay | Initial |  `chartevents` or `sofa` or `first_day_sofa`
+`weight` | Patient weight in kg | Admission | Initial | `first_day_weight`
+`sofa_score` | Sequential organ failure assessment score | Any time during the ICU stay | Initial |  `first_day_sofa`
 `sapsii_score` | Simplified acute physiology score-II | Any time during the ICU stay | Initial | `sapsii`
 `length_of_hospital_stay` | Length of hospital stay (days) | Days from admission to discharge | N/A | `admissions`
 `length_of_icu_stay` | Length of ICU stay (days) | Days from ICU admission to discharge | N/A | `icustays`
 `daily_fluid_intake` | 24-hour fluid intake (mL) | First 24 hours | Initial | unknown |  
-`daily_urine_output` | 24-hour urine output (mL) | First 24 hours | Initial | `first_day_urine_output` or `urine_output_rate`
+`daily_urine_output` | 24-hour urine output (mL) | First 24 hours | Initial | `first_day_urine_output`
 `congestive_heart_failure` | Whether patient is diagnosed with congestive heart failure | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd` 
 `myocardial_infarction` | Whether patient is diagnosed with myocardial infarction | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd`
 `cerebrovascular_disease` | Whether patient is diagnosed with cerebrovascular disease | Any time during hospital stay | N/A | `d_icd_diagnoses` and `diagnoses_icd`
@@ -93,7 +93,7 @@ Variable name | Description | Timing | Aggregation | Source | Notes
 `min_pulse_saturation` | Minimum pulse O2 saturation (%) | Any time during ICU stay | Minimum | `d_items` and `chartevents`
 `max_lactate` | Maximum lactate (mmol/L) | Any time during ICU stay | Maximum | `d_labitems` and `labevents`
 `mean_lactate` | Mean lactate (mmol/L) | Any time during ICU stay | Average | `d_labitems` and `labevents`
-`lactate_load` | Lactate load (mmol·hr./L) | Any time during ICU stay | N/A | `d_labitems` and `labevents` | AUC of lactate
+`lactate_load` | Lactate load (mmol·hr./L) | Any time during ICU stay | N/A | `d_labitems` and `labevents` | Calculate AUC of lactate in Python | 
 `normalized_lactate_load` | Normalized lactate load (mmol/L) | Any time during ICU stay | Normalized | `d_labitems` and `labevents` | Lactate load over time
 
 ### Outcome(s)
