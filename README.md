@@ -11,4 +11,4 @@ Steps to rerun the analysis:
 3) Download query results with `.csv` extensions, and store in the `data` folder. If the file is too large, export to Google Drive before downloading.
 4) Run the Jupyter notebooks (`exploratory_analysis.ipynb` and `primary_analysis.ipynb`) in `analyze` folder,
 
-Note: If using the existing csv files in the `data` folder, only step 4 is needed. The rationale for downloading csv files rather than establishing a direct connection to BigQuery is the limited window of access to Google BigQuery on a free trial.
+Note: The extracted csv files are not included in the `data` folder, as MIMIC data is protected under a Data Use Agreement. Additionally, the rationale for downloading csv files rather than establishing a direct connection to BigQuery is the limited window of access to Google BigQuery on a free trial.
