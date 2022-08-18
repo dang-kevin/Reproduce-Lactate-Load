@@ -52,7 +52,7 @@ A table of the evaluation measures comparing the results in the original study a
 Evaluation measure | Original Study | Reproduction
 --- | --- | ---
 Cohort | 21333 | 17426
-% Excluded | 59.8% | 56.0%
+% Excluded | 59.8% | 67.2%
 AUC of All Patients: Normalized lactate load | 0.706 | 0.661
 AUC of All Patients: Maximum lactate | 0.68 | 0.633
 AUC of All Patients: Mean lactate | 0.694 | 0.649
